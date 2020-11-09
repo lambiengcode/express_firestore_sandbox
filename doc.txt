@@ -1,0 +1,23 @@
+API:
+
+How to use:
+
+--> input:
+
+{
+    "id": "YOUR DEVICE ID",
+    "url": "URL TO IMAGE",
+    "time": number
+}
+
+example:
+
+{
+    "id" : "HongVinhTestAPI",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpHjfVFmf0rpejlA5YeQFUto-uSB9nmnOdqQ&usqp=CAU",
+    "time": 2
+}
+
+--> output:
+
+return a text or "Error - Time output" if time is exceeded

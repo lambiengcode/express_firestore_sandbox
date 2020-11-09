@@ -1,0 +1,25 @@
+{
+  "name": "api_firestore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "pm2": "pm2 ecosystem.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^4.7.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.3.0",
+    "firebase-functions": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
