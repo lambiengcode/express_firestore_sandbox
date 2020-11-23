@@ -10,7 +10,7 @@ var serviceAccount = require("./serviceAccountKey.json");
 const { Timestamp } = require('@google-cloud/firestore');
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://smartfarm-f6e86.firebaseio.com"
+    databaseURL: "https://send-image-snapshot.firebaseio.com"
 });
 // admin.initializeApp({
 //     credential: admin.credential.cert(serviceAccount),
@@ -39,7 +39,7 @@ app.post('/api/sendReceive', (req, res) => {
                         var timer = setInterval(async function () {
                             if (response != '') {
                                 clearInterval(timer);
-                            } 
+                            }
                             if (time == 0) {
                                 snapshot.doc.ref.update({
                                     'receive': true,
@@ -56,11 +56,11 @@ app.post('/api/sendReceive', (req, res) => {
                                 }
                             }
 
-                            
+
                         }, 1000);
                     });
                 });
-            
+
         } catch (error) {
             console.log(error);
             return res.status(500).send(error);
@@ -70,15 +70,15 @@ app.post('/api/sendReceive', (req, res) => {
 
 //generate id
 function makeId(length) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
- }
- 
+}
+
 
 
 // read item
